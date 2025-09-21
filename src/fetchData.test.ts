@@ -1,8 +1,15 @@
 import fetchData from './fetchData'
 
-test('the data is peanut butter', () => {
+// https://zenn.dev/296u/articles/7175641f1c4492 の「コールバック」を参照
+
+test('the data is expected to be "peanut butter"', done => {
     const callback = (str: string) => {
-        expect(str).toBe('peanut butter')
+        try {
+            expect(str).toBe('peanut butter')
+            done()
+        } catch (error) {
+            done(error)
+        }
     }
     fetchData(callback)
 })
