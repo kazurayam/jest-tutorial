@@ -2,7 +2,7 @@
     "name": "jest-tutorial",
     "license": "UNLICENSED",
     "scripts": {
-        "test": "jest"
+        "test": "jest --detectOpenHandles"
     },
     "devDependencies": {
         "@types/jest": "^30.0.0",
