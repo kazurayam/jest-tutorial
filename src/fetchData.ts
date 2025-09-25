@@ -5,4 +5,8 @@ const fetchData = () => {
     // return Promise.reject('error')
 }
 
+export const fetchDataReject = () => {
+    //return Promise.resolve('peanut butter')
+    return Promise.reject('error')
+}
 export default fetchData
