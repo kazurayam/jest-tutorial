@@ -1,10 +1,10 @@
 import { initializeCityDatabase, clearCityDatabase, isCity } from './cityDatabase';
 beforeEach(() => {
-    initializeCityDatabase();
+    return initializeCityDatabase();
 });
 
 afterEach(() => {
-    clearCityDatabase();
+    return clearCityDatabase();
 });
 
 test('city database has Vienna', () => {
