@@ -1,9 +1,12 @@
 import { initializeCityDatabase, clearCityDatabase, isCity } from './cityDatabase';
-beforeEach(() => {
+
+//beforeEach(() => {
+beforeAll(() => {
     return initializeCityDatabase();
 });
 
-afterEach(() => {
+//afterEach(() => {
+afterAll(() => {
     return clearCityDatabase();
 });
 
