@@ -12,3 +12,4 @@ export function forEach<T>(items: T[], callback: (item: T) => void): void {
         callback(item);
     }
 }
+

@@ -36,6 +36,51 @@ Ran all test suites.
 - [`fetchData.ts`](https://github.com/kazurayam/jest-tutorial/blob/master/src/fetchData.ts)
 - [`fetchData.test.ts`](https://github.com/kazurayam/jest-tutorial/blob/master/src/fetchData.test.ts)
 
+
+### coverageを調べる
+
+package.jsonの中、scriptsのところをこう書く
+
+```
+    "scripts": {
+        "test": "jest --coverage"
+    },
+```
+
+すなわちjestコマンドに`--coverage`を引数として与える。するとこういう表が出力される。
+
+```
+----------------------|---------|----------|---------|---------|-------------------
+File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+----------------------|---------|----------|---------|---------|-------------------
+All files             |   93.33 |      100 |   81.81 |   91.66 |
+ cityDatabase.ts      |   85.71 |      100 |      60 |      80 | 7,16
+ fetchData.ts         |     100 |      100 |     100 |     100 |
+ fetchDataCallback.ts |     100 |      100 |     100 |     100 |
+ forEach.ts           |     100 |      100 |     100 |     100 |
+ sum.ts               |     100 |      100 |     100 |     100 |
+----------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 10 passed, 11 total
+Tests:       1 skipped, 27 passed, 28 total
+Snapshots:   0 total
+Time:        1.555 s
+Ran all test suites.
+```
+
+`cityDatabase.ts`のテストが不足していることが明確にわかる。
+
+### console.log(message)を非表示にする
+
+package.jsonのscriptのところをこう書く。
+
+```
+    "scripts": {
+        "test": "jest --silent"
+    },
+```
+
+するとjestを実行したときにテストがconsole.log(message)で出力したメッセージがコンソールに表示されなくなる。See https://jestjs.io/docs/cli#--silent
+
 ## 参考情報
 
 [typescript環境にJestを導入する](https://qiita.com/mktu/items/d36416baba155dfecc00)
